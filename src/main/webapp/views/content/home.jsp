@@ -83,7 +83,7 @@ color:#fff;
 						<li class="nav-item ml-auto "><a
 							href="<%=request.getContextPath()%>" class="nav-link active">Contact</a></li>
 						<li class="nav-item ml-auto "><a
-							href="<%=request.getContextPath()%>/auth/login" class="nav-link active">Login</a></li>
+							href="<%=request.getContextPath()%>/auth/user/login" class="nav-link active">Login</a></li>
 
 					</ul>
 

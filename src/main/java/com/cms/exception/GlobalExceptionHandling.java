@@ -17,13 +17,13 @@ public class GlobalExceptionHandling  {
 		return "error/error";
 	}*/
 	
-	@ExceptionHandler(value=ArithmeticException.class)
+	/*@ExceptionHandler(value=ArithmeticException.class)
 	public String airthmeticException(Model model)
 	{
 		model.addAttribute("error", "Something Went Wrong");
 		
 		return "error/404";
-	}
+	}*/
 	
 	
 }

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -19,7 +20,7 @@ html{
 </style>
 </head>
 <body>
-<%@ include file="../componants/login-header.jsp"%>
+<%-- <%@ include file="../componants/login-header.jsp"%> --%>
 
 
 <!-- Login  -->
@@ -35,11 +36,13 @@ html{
               </a>
             </div>
             <h2 class="fs-6 fw-normal text-center text-secondary mb-4">Sign in to your account</h2>
-            <form action="${pageContext.request.contextPath }/auth/registration" method="post">
+         <c:if test="${param.error!=null}"><h6 style="color:red"> Invalid username and password.</h6></c:if>
+       <c:if test="${param.logout != null}">  <h6 class=" text-success text-center"> <b>You have been logged out.</b></h6></c:if>
+            <form action="${pageContext.request.contextPath }/authentication/login" method="post">
               <div class="row gy-2 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-1">
-                    <input type="email" class="form-control" name="email"id="email" placeholder="name@example.com" required>
+                    <input type="text" class="form-control" name="username"id="email" placeholder="name@example.com" required>
                     <label for="email" class="form-label">Email</label>
                   </div>
                 </div>
@@ -65,8 +68,8 @@ html{
                     <button class="btn btn-primary btn-lg" type="submit">Log in</button>
                   </div>
                 </div>
-                <div class="col-12">
-                  <p class="m-0 text-secondary text-center">Don't have an account? <a href="${pageContext.request.contextPath }/auth/registration" class="link-primary text-decoration-none">Sign up</a></p>
+                 <div class="col-12">
+                  <p class="m-0 text-secondary text-center">Don't have an account? <a href="${pageContext.request.contextPath }/auth/user/registration" class="link-primary text-decoration-none">Sign up</a></p>
                 </div>
               </div>
             </form>

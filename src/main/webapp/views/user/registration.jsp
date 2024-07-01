@@ -82,7 +82,7 @@ body {
 								</div>
 							</div>
 							<form
-								action="${pageContext.request.contextPath }/auth/registration"
+								action="${pageContext.request.contextPath }/auth/user/registration"
 								method="post" ${user }>
 								<div class="row gy-3 overflow-hidden">
 									<div class="col-12">
@@ -145,7 +145,7 @@ body {
 										class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end mt-4">
 										<p class="m-0 text-secondary text-center">
 											Already have an account? <a
-												href="${pageContext.request.contextPath }/auth/login"
+												href="${pageContext.request.contextPath }/auth/user/login"
 												class="link-primary text-decoration-none">Sign in</a>
 										</p>
 									</div>

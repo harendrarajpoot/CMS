@@ -1,5 +1,11 @@
 package com.cms.controller;
 
+
+
+	
+
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,26 +17,32 @@ import com.cms.entities.User;
 import com.cms.services.UserServices;
 
 @Controller
-@RequestMapping("/auth")
-public class AuthController {
+@RequestMapping("/auth/user")
 
-	final private static String authfolder = "auth";
+public class UserController {
+	final private static String userfolder = "user";
 	private UserServices userServices;
 
-	public AuthController(UserServices userServices) {
+	public UserController(UserServices userServices) {
 		this.userServices = userServices;
 	}
 
 	@GetMapping("/login")
 	public String LoginPage() {
-		return "auth/login";
+		
+		return "redirect:dashboard";
 	}
-
-	@PostMapping("/login")
-	public String loginSubmit() {
-		System.out.println("loginSubmit");
-
-		return "auth/login";
+	@GetMapping("/dashboard")
+	public String dashboard(Principal principal,Model model) {
+		
+		model.addAttribute("username", principal.getName().toUpperCase());
+		return userfolder+"/user-dashboard";
+	}
+	
+	@GetMapping("/profile")
+	public String profile() {
+		System.out.println("USER PROFILE PAGE--------------");
+		return userfolder+"/profile";
 	}
 
 	@GetMapping("/forget-password")
@@ -43,7 +55,7 @@ public class AuthController {
 	@GetMapping("/registration")
 	public String userRegistration(Model model) {
 		model.addAttribute("user", new User());
-		return authfolder + "/registration";
+		return userfolder + "/registration";
 	}
 
 	@PostMapping(value = "/registration")
@@ -59,15 +71,15 @@ public class AuthController {
 
 		if (user.getFname().trim() == null || user.getFname().trim() == "" || user.getFname().trim().isEmpty()) {
 			model.addAttribute("name", "Name Can't be Empty");
-			return authfolder + "/registration";
+			return userfolder + "/registration";
 		} else if (user.getEmail() == null || user.getEmail() == "" || user.getEmail().isEmpty()) {
 			model.addAttribute("error", "Email Can't be Empty");
-			return authfolder + "/registration";
+			return userfolder + "/registration";
 		}
 
 		else if (existingUser != null) {
 			model.addAttribute("error", "Email Already Exits ");
-			return authfolder + "/registration";
+			return userfolder + "/registration";
 		}
 
 		saveUser = userServices.saveUser(user);
@@ -77,7 +89,8 @@ public class AuthController {
 
 		}
 
-		return authfolder + "/registration";
+		return userfolder + "/registration";
 	}
+
 
 }

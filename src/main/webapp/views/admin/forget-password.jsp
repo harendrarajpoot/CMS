@@ -45,8 +45,8 @@ body {
           </div>
         </div>
         <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-4">
-          <a href="${pageContext.request.contextPath }/auth/login" class="link-secondary text-decoration-none">Login</a>
-          <a href="${pageContext.request.contextPath }/auth/registration" class="link-secondary text-decoration-none">Register</a>
+          <a href="${pageContext.request.contextPath }/auth//admin/login" class="link-secondary text-decoration-none">Login</a>
+        <%--   <a href="${pageContext.request.contextPath }/auth/registration" class="link-secondary text-decoration-none">Register</a> --%>
         </div>
       </div>
     </div>

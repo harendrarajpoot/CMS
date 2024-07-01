@@ -10,7 +10,7 @@
 <meta content="" name="keywords">
 
 
-<%@ include file="componants/cdn-top-link.jsp"%>
+ <%@ include file="../componants/cdn-top-link.jsp"%> 
 
 
 </head>
@@ -18,11 +18,11 @@
 <body>
 
 	<!-- ======= Header ======= -->
-	<%@ include file="componants/header.jsp"%>
+	<%@ include file="../componants/header.jsp"%>
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<%@ include file="componants/sidebar.jsp"%>
+	<%@ include file="../componants/sidebar.jsp"%>
 	<!-- End Sidebar-->
 
 
@@ -118,7 +118,7 @@
 
 	<!-- End Cards Section --> </main>
 	<!-- End #main -->
-	<%@ include file="componants/cdn-bottom-link.jsp"%>
+	<%@ include file="../componants/cdn-bottom-link.jsp"%>
 
 </body>
 

@@ -25,8 +25,10 @@
       
        <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath }/admin/login">Admin Login</a>
+          <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath }/logout" title="logout">${username}</a>
+          
         </li>
+        
       </ul>
     </div>
   </div>

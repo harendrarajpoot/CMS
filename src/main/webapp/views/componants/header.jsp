@@ -255,12 +255,12 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="${pageContext.request.contextPath }/vendor/img/profile.jpeg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Harendra Kumar</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">${username}</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Harendra</h6>
+              <h6>${username}</h6>
               <span>Full Stack Developer</span>
             </li>
             <li>
